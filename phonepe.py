@@ -233,7 +233,7 @@ df6 = df6.values.tolist()
 hostname = 'localhost'
 database = 'phonepe_db'
 username = 'postgres'
-pwd = 'Dhip@1999'
+pwd = ''
 port_id = 5432
 
 conn = psycopg2.connect(
