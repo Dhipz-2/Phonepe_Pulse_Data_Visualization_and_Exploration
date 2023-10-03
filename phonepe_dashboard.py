@@ -117,11 +117,6 @@ with tab2:
         fig.update_geos(fitbounds='locations', visible=False)
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
-        cur.execute(f"select brand, sum(registered_users) from register_phone_users where year ={year} and quater={quarter} group by brand;")
-        sql1 = cur.fetchall()
-        df1 = pd.DataFrame(sql1, columns=['Transaction_Type','Total_transactions']).reset_index(drop=True)
-        st.table(df1)
-
     elif box=='User':
         st.subheader("Statewise Users")
         cur.execute(f'select state, sum(registered_user) from statelevel_users where year = {year} and quater = {quarter} group by state;')
